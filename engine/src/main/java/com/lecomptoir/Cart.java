@@ -18,6 +18,9 @@ public class Cart {
             total += line.getTotal();
         }
 
+        if (total>50) {
+            total = total * 0.90;
+        }
         return total;
     }
 }

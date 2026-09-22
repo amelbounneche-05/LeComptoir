@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Product pizza = new Product("Pizza", 12.50, "FOOD");
+        Product pizza = new Product("Pizza", 80.00, "FOOD");
 
         Cart cart = new Cart();
 
