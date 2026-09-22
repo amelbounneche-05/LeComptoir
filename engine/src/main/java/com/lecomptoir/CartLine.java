@@ -13,4 +13,8 @@ public class CartLine {
     double getTotal() {
         return product.price * quantity;
     }
+
+    double getTax() {
+    return getTotal() * product.taxRate;
+    }
 }
