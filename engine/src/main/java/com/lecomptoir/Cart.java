@@ -61,4 +61,14 @@ public class Cart {
 
         return tax;
     }
+
+    double getDiscount10Percent() {
+        double total = getTotal();
+
+        if (total > 50) {
+            return total * 0.10;
+        }
+
+        return 0;
+    }
 }
