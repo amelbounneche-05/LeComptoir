@@ -71,4 +71,20 @@ public class Cart {
 
         return 0;
     }
+
+    double getDiscount20Percent() {
+        int foodProducts = 0;
+
+        for (CartLine line : lines) {
+            if (line.product.category.equals("FOOD")) {
+                foodProducts += line.quantity;
+            }
+        }
+
+        if (foodProducts >= 10) {
+            return getTotal() * 0.20;
+        }
+
+        return 0;
+    }
 }

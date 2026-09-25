@@ -23,9 +23,9 @@ public class Ticket {
         // Calculate the total before VAT
         double totalHT = totalTTC - tax;
 
-        // Display the VAT details 
-        System.out.println("Total HT : " + totalHT + " EUR");
-        System.out.println("TVA : " + tax + " EUR");
-        System.out.println("Total : " + (cart.getTotal() - discount) + " EUR");
+        // Display the VAT details
+        System.out.printf("Total HT : %.2f EUR%n", totalHT);
+        System.out.printf("TVA : %.2f EUR%n", tax);
+        System.out.printf("Total : %.2f EUR%n", cart.getTotal() - discount);
     }
 }

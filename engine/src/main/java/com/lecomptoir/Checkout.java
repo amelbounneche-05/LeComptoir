@@ -22,16 +22,17 @@ public class Checkout {
 
     Ticket checkout(Cart cart) {
         double discount = Math.max(
-            getLoyaltyDiscount(),
-            cart.getDiscount10Percent()
-        );
+                getLoyaltyDiscount(),
+                Math.max(
+                        cart.getDiscount10Percent(),
+                        cart.getDiscount20Percent()));
 
         if (loyaltyPoints >= 100 && discount == 5) {
             loyaltyPoints -= 100;
         }
 
         if (discount > 0) {
-            System.out.println("Discount : " + discount + " EUR");
+            System.out.printf("Discount : %.2f EUR%n", discount);
         }
 
         loyaltyPoints += getEarnedPoints(cart);
