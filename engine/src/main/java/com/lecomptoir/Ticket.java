@@ -1,14 +1,18 @@
 package com.lecomptoir;
 
 public class Ticket {
+    
+    // Cart and discount used for the ticket
     Cart cart;
     double discount;
 
+    // Create a ticket with a cart and a discount
     public Ticket(Cart cart, double discount) {
         this.cart = cart;
         this.discount = discount;
     }
 
+    // Display the cart details and the final total
     void display() {
         for (CartLine line : cart.lines) {
             System.out.printf("%s x %d%n", line.product.name, line.quantity);
@@ -22,6 +26,7 @@ public class Ticket {
         double taxFood = 0;
         double taxDrink = 0;
 
+        // Separate VAT for food and drinks
         for (CartLine line : cart.lines) {
             if (line.product.category.equals("FOOD")) {
                 taxFood += line.getTax();
