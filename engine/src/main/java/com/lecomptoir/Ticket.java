@@ -1,19 +1,24 @@
 package com.lecomptoir;
 
 public class Ticket {
-    
+
     // Cart and discount used for the ticket
     Cart cart;
     double discount;
 
-    // Create a ticket with a cart and a discount
-    public Ticket(Cart cart, double discount) {
+    // Customer's loyalty points
+    int loyaltyPoints;
+
+    // Create a ticket with a cart, a discount and loyalty points
+    public Ticket(Cart cart, double discount, int loyaltyPoints) {
         this.cart = cart;
         this.discount = discount;
+        this.loyaltyPoints = loyaltyPoints;
     }
 
     // Display the cart details and the final total
     void display() {
+
         for (CartLine line : cart.lines) {
             System.out.printf("%s x %d%n", line.product.name, line.quantity);
         }
@@ -42,6 +47,11 @@ public class Ticket {
         System.out.printf("Total HT : %.2f EUR%n", totalHT);
         System.out.printf("TVA 5.5%% : %.2f EUR%n", taxFood);
         System.out.printf("TVA 20%% : %.2f EUR%n", taxDrink);
+
+        // Display the total after discount
         System.out.printf("Total : %.2f EUR%n", cart.getTotal() - discount);
+
+        // Display the customer's loyalty points
+        System.out.println("Loyalty points : " + loyaltyPoints);
     }
 }

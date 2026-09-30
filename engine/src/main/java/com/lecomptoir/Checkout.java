@@ -12,8 +12,8 @@ public class Checkout {
 
     // Calculate the loyalty discount
     double getLoyaltyDiscount() {
-        
-        // Give a 5€ discount if the customer has at least 100 points
+
+        // Give a 5 EUR discount if the customer has at least 100 points
         if (loyaltyPoints >= 100) {
             return 5;
         }
@@ -22,7 +22,7 @@ public class Checkout {
         return 0;
     }
 
-    // Calculate the loyalty points earned from the cart
+    // Calculate the points earned from the cart
     int getEarnedPoints(Cart cart) {
         return (int) cart.getTotal();
     }
@@ -37,7 +37,7 @@ public class Checkout {
                         cart.getDiscount10Percent(),
                         cart.getDiscount20Percent()));
 
-        // Use 100 loyalty points when the 5€ discount is used
+        // Use 100 points when the 5 EUR discount is used
         if (loyaltyPoints >= 100 && discount == 5) {
             loyaltyPoints -= 100;
         }
@@ -50,7 +50,7 @@ public class Checkout {
         // Add the points earned from the cart
         loyaltyPoints += getEarnedPoints(cart);
 
-        // Create and return the ticket
-        return new Ticket(cart, discount);
+        // Create the ticket and pass the loyalty points
+        return new Ticket(cart, discount, loyaltyPoints);
     }
 }

@@ -7,9 +7,9 @@ public class Main {
         // Create the food products
         Product pizza = new Product("Pizza", 12.50, "FOOD");
         Product burger = new Product("Burger", 10.00, "FOOD");
-        Product sandwich = new Product("Sandwich", 6.00, "FOOD");
+        Product sandwich = new Product("Sandwich", 12.00, "FOOD");
         Product salade = new Product("Salade", 5.00, "FOOD");
-        Product frites = new Product("Frites", 4.00, "FOOD");
+        Product frites = new Product("Frites", 8.00, "FOOD");
         Product dessert = new Product("Dessert", 3.50, "FOOD");
 
         // Create the drink products
